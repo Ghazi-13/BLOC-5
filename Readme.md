@@ -11,6 +11,13 @@ The project goals:
 * email adress: ghazibouchnak@gmail.com
 * video link:
 
+
+## Links:
+
+* MLFLOW: https://getaround-mlflow-app.herokuapp.com/#/experiments/1
+* API: https://getaround-price-pred-api.herokuapp.com/docs
+* STREAMLIT: https://getaround-streamlit.herokuapp.com/
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
