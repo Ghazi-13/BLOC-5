@@ -102,7 +102,7 @@ async def predict(predictionFeatures: PredictionFeatures):
     dataset = pd.DataFrame(dict(predictionFeatures), index=[0])
 
     # Log model from mlflow
-    logged_model ='runs:/c053bac0055344679c8ba771ecdd0bbd/getaround_price_estimator'
+    logged_model ='runs:/235a123f1c8a4fc888a9e8eedf583899/getaround_price_estimator'
 
     # Load model as a PyFuncModel.
     loaded_model = mlflow.pyfunc.load_model(logged_model)
@@ -114,4 +114,4 @@ async def predict(predictionFeatures: PredictionFeatures):
 
 # What to do when the script is runned as main script
 if __name__=="__main__":
-    uvicorn.run(app, host="0.0.0.0", port=4000, debug=True, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=4000, debug=True, reload=True)
