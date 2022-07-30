@@ -9,7 +9,7 @@ The project goals:
 ## Details for certification purpose
 
 * email adress: ghazibouchnak@gmail.com
-* video link:
+* video link: https://share.vidyard.com/watch/CQV9RLndkXhxMiFTbrt6j1?
 
 
 ## Links:
