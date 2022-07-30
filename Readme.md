@@ -46,19 +46,19 @@ Use your aws secret informations to create a S3 bucket and a posgres database. B
 API
 You must have a MLFlow server and its URI ready at this point. All previous credentials and the server URI must be available in env vars.Build the docker image then run the docker container based on the image, create a heroku app then push your container on it and release the app.
 
-*Build DOCKER IMAGE:
+* Build DOCKER IMAGE:
 docker build . -t YOUR_IMAGE_NAME
 
-*Run MLFLOW
+* Run MLFLOW
 docker run -it -v "$(pwd):/home/app" -e AWS_ACCESS_KEY_ID="YOUR_AWS_ACCESS_KEY" -e AWS_SECRET_ACCESS_KEY="YOUR_AWS_SECRET_ACCESS_KEY" -e BACKEND_STORE_URI="YOUR_BACKEND_STORE_URI" -e ARTIFACT_ROOT="YOUR_S3_BUCKET" -e MLFLOW_TRACKING_URI="YOUR_MLFLOW_HEROKU_SERVER_URI" YOUR_IMAGE_NAME python train.py
 
-*Run API
+* Run API
 docker run -it -v "$(pwd):/home/app" -e AWS_ACCESS_KEY_ID="YOUR_AWS_ACCESS_KEY" -e AWS_SECRET_ACCESS_KEY="YOUR_AWS_SECRET_ACCESS_KEY" -e BACKEND_STORE_URI="YOUR_BACKEND_STORE_URI" -e ARTIFACT_ROOT="YOUR_S3_BUCKET" -e MLFLOW_TRACKING_URI="YOUR_MLFLOW_HEROKU_SERVER_URI" YOUR_IMAGE_NAME python app.py
 
-*Run STREAMLIT
+* Run STREAMLIT
 docker run -it -v "$(pwd):/home/app" -e PORT=80 -e AWS_ACCESS_KEY_ID="YOUR_AWS_ACCESS_KEY" -e AWS_SECRET_ACCESS_KEY="YOUR_AWS_SECRET_ACCESS_KEY" -e BACKEND_STORE_URI="YOUR_BACKEND_STORE_URI" -e ARTIFACT_ROOT="YOUR_S3_BUCKET" YOUR_IMAGE_NAME python app.py
 
-*Create your app and deploy it on HEROKU
+* Create your app and deploy it on HEROKU
   1-heroku container:login
   2-heroku create YOUR_APP_NAME
   3-heroku container:push web -a YOUR_APP_NAME
